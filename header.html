@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="header">
+   <!-- Header -->
+   <header>
+    <div class="container">
+      <div class="row justify-content-between align-items-center">
+        <div class="col-4 logo">
+          <img src="./image/logo.png" alt="">
+        </div>
+        <div class="col-4">
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="Input keyword" aria-label="Input keyword"
+              aria-describedby="button-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-info" type="button" id="button-addon2">搜尋</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-main">
+    <div class="container">
+      <a class="navbar-brand" href="/">
+        <i class="fa fa-home f24"></i>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="/about.html">關於New eID
+              <!-- <span class="sr-only">(current)</span> -->
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              New eID 作業
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="/downloadAndPrint.html">資料下載及列印</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/pdfSignatureVerification.html">PDF檔簽章及驗證</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/lost.html">掛失及取消掛失</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="/password.html">密碼變更及重設</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="news.html">最新消息</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/download.html">下載服務</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact.html">聯絡我們</a>
+          </li>
+        </ul>
+        <span class="navbar-text">
+          <button type="button" class="btn btn-light btn-sm">登入</button>
+        </span>
+      </div>
+    </div>
+  </nav>
+  </div>
+</body>
+</html>

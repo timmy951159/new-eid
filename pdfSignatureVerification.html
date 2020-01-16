@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>PDF檔簽章及驗證</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+  <div class="wrapper">
+
+    <div id="header"></div>
+
+    <div class="bg-gray">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb" style="background-color: #eee;">
+            <li class="breadcrumb-item"><a href="/">首頁</a></li>
+            <li class="breadcrumb-item active" aria-current="page">PDF檔簽章及驗證</li>
+          </ol>
+        </nav>
+      </div>
+
+      <div class="container">
+        <div class="tabs-container">
+          <div class="row justify-content-center">
+            <div class="col-3">
+              <a href="downloadAndPrint.html" class="tabs">
+                <span class="tabs-icon">
+                  <img src="./image/icon_4.png" alt="">
+                </span>
+                資料下載及列印
+              </a>
+            </div>
+            <div class="col-3">
+              <a href="pdfSignatureVerification.html" class="tabs active">
+                <span class="tabs-icon">
+                  <img src="./image/icon_5.png" alt="">
+                </span>
+                PDF檔簽章及驗證
+              </a>
+            </div>
+
+            <div class="col-3">
+              <a href="lost.html" class="tabs">
+                <span class="tabs-icon">
+                  <img src="./image/icon_4.png" alt="">
+                </span>
+                掛失及取消掛失
+              </a>
+            </div>
+
+            <div class="col-3">
+              <a href="password.html" class="tabs">
+                <span class="tabs-icon">
+                  <img src="./image/icon_7.png" alt="">
+                </span>
+                密碼變更及重設
+              </a>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="tabs-content-container">
+          <div class="bg-white">
+            <div class="upload-container">
+              <div id="flow1">
+                <div class="upload-img">
+                  <img src="./image/icon_8.png" alt="">
+                  <p>請將PDF檔拖移至此或點擊「選取檔案」</p>
+                </div>
+                <div class="row justify-content-center upload-btn-group">
+                  <button class="btn btn-primary">選取檔案</button>
+                  <button class="btn btn-primary" id="flow1_btn">下一步</button>
+                </div>
+              </div>
+
+              <div id="flow2">
+                <div class="upload-img">
+                  <img src="./image/icon_9.png" alt="">
+                  <p>檔名 New eID.pdf</p>
+                </div>
+                <div class="row justify-content-center upload-btn-group">
+                  <button class="btn btn-primary">取消</button>
+                  <button class="btn btn-primary" id="flow2_btn">簽章</button>
+                </div>
+              </div>
+
+              <div id="flow3">
+                <div class="row justify-content-center">
+                  <div class="passoword-cube d-flex flex-column align-items-center">
+                    <p class="loading-para">簽章中請稍候</p>
+                    <div class="spinner-border" role="status">
+                      <span class="sr-only">Loading...</span>
+                    </div>
+                    <a href="#" class="cancel-btn">
+                      取消
+                    </a>
+                  </div>
+                </div>
+              </div>
+
+              <div id="flow4">
+                <div class="row justify-content-center">
+                  <div class="passoword-cube d-flex flex-column align-items-center">
+                    <p class="loading-para">簽章成功</p>
+                    <div>
+                      <i class="fa fa-check-circle-o" style="font-size: 36px;"></i>
+                    </div>
+                     <br>
+                    <p class="f12">本系統將自動轉跳...</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div id="footer"></div>
+
+  </div>
+
+
+
+
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+    integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+    integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous">
+  </script>
+
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+  <script>
+    $(function () {
+      $("#header").load("header.html");
+      $("#footer").load("footer.html");
+
+      $("#flow1_btn").click(function () {
+        $("#flow1").fadeOut()
+        setTimeout(function () {
+          $("#flow2").fadeIn();
+        }, 500)
+      })
+
+      $("#flow2_btn").click(function () {
+        $("#flow2").fadeOut();
+        setTimeout(function () {
+          $("#flow3").fadeIn();
+          setTimeout(function() {
+            $("#flow3").fadeOut();
+            setTimeout(function() {
+              $("#flow4").fadeIn();
+              setTimeout(function() {
+                window.location.href="/pdfSignatureVerification.html"
+              }, 3000)
+            }, 500)
+          }, 3000)
+        }, 500)
+      })
+
+    });
+  </script>
+</body>
+
+</html>
